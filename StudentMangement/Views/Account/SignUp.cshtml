@@ -1,0 +1,92 @@
+﻿@model Account.Entity.StudentAccount
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<h2 style="text-align:center">SignUp</h2>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        padding: 15px;
+        width: 100;
+    }
+</style>
+@using (Html.BeginForm("SignUp", "Account", FormMethod.Post))
+{
+    <table align="center">
+        <tr>
+            <td>Name</td>
+            <td>@Html.TextBoxFor(Model => Model.Name)</td>
+        </tr>
+        <tr>
+            <td>Email ID</td>
+            <td>@Html.TextBoxFor(Model => Model.EmailId)</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                @Html.RadioButtonFor(Model => Model.Gender, "Male", new { id = "Male" })Male
+                @Html.RadioButtonFor(Model => Model.Gender, "Female", new { id = "Female" })Female
+                @Html.RadioButtonFor(Model => Model.Gender, "Others", new { id = "Others" })Others
+            </td>
+        </tr>
+        <tr>
+            <td>LanguagesKnown</td>
+            <td>
+                @Html.CheckBox("Tamil")Tamil
+                @Html.CheckBox("English")English
+                @Html.CheckBox("Telugu")Telugu
+                @Html.CheckBox("Hindi")Hindi;
+            </td>
+        </tr>
+        <tr>
+            <td>Qualification</td>
+            <td>
+                @Html.DropDownList("Qualification", new List<SelectListItem> {
+               new SelectListItem{Text="BE",Value="Engineering"},
+               new SelectListItem{Text="AS",Value="Arts"},
+               }, "selectQualification")
+            </td>
+        </tr>
+        <tr>
+            <td>PhoneNumber</td>
+            <td>@Html.TextBoxFor(Model => Model.PhoneNumber)</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>@Html.TextBoxFor(Model => Model.Password)</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>@Html.TextBoxFor(Model => Model.Address)</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>
+                @Html.DropDownList("City", new List<SelectListItem> {
+               new SelectListItem{Text="Coimbatore",Value="Cbe"},
+               new SelectListItem{Text="Chennai",Value="Chennai"},
+               }, "selectCity")
+            </td>
+        </tr>
+        <tr>
+            <td>State</td>
+            <td>
+                @Html.DropDownList("State", new List<SelectListItem> {
+               new SelectListItem{Text="TamilNadu",Value="TN"},
+               new SelectListItem{Text="Karnataka",Value="Karnataka"},
+               }, "selectState")
+            </td>
+        </tr>
+        <tr>
+            <td>PinCode</td>
+            <td>@Html.TextBoxFor(Model => Model.PinCode)</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" />
+            </td>
+            <td>Already have an account??<a href="/Login">Login</a></td>
+        </tr>
+    </table>
+}

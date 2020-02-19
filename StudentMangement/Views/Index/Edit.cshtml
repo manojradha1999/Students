@@ -1,0 +1,49 @@
+﻿@model Students.Data.Student
+@{
+    ViewBag.Title = "Edit";
+}
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        padding: 15px;
+        width: 100;
+    }
+
+    input[type="text"] {
+        border: none;
+        padding: 10px;
+    }
+</style>
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Update", "Index", FormMethod.Post))
+{
+    @Html.HiddenFor(Model => Model.StudentId);
+    <table>
+        <tr>
+            <td>Student Name : </td>
+            <td>@Html.TextBoxFor(Model => Model.StudentName)</td>
+        </tr>
+        <tr>
+            <td>Department : </td>
+            <td>@Html.TextBoxFor(Model => Model.Department)</td>
+        </tr>
+        <tr>
+            <td>Year: </td>
+            <td>@Html.TextBoxFor(Model => Model.Year)</td>
+        </tr>
+        <tr>
+            <td>Cgpa: </td>
+            <td>@Html.TextBoxFor(Model => Model.Cgpa)</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Update" />
+            </td>
+            <td><a href="/Index">Back</a></td>
+        </tr>
+    </table>
+}
+
+

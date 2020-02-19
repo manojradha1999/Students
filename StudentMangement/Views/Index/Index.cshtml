@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Students.Data.Student>
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        padding: 15px;
+        width: 100;
+    }
+</style>
+<h2>Welcome</h2>
+@if (TempData["Message"] != null)
+{
+    @Html.Label((string)TempData["Message"]);
+}
+<br />
+@Html.ActionLink("Add New Student", "Create")
+<br />
+<table>
+    <tr>
+        <th>Student Id</th>
+        <th>Student Name</th>
+        <th>Department</th>
+        <th>Year</th>
+        <th>Cgpa</th>
+        <th>Action</th>
+    </tr>
+    @foreach (Students.Data.Student student in Model)
+    {
+        <tr>
+            <td>@student.StudentId</td>
+            <td>@student.StudentName</td>
+            <td>@student.Department</td>
+            <td>@student.Year</td>
+            <td>@student.Cgpa</td>
+            <td>
+                @Html.ActionLink("Edit / ", "Edit", new { id = student.StudentId })
+                @Html.ActionLink("Delete", "Delete", new { id = student.StudentId })
+            </td>
+        </tr>
+    }
+</table>
+
