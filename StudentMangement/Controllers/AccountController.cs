@@ -15,6 +15,7 @@ namespace StudentMangement.Controllers
             ViewBag.City = new SelectList("City");
             ViewBag.State = new SelectList("State");
             return View();
+
         }
         public ActionResult Login()
         {
