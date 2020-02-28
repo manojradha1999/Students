@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Display</h2>
+@Html.ActionLink("Create new cloth", "Create")
+<br />
+@if (TempData["Message"] != null)
+{
+    @Html.Label((string)TempData["Message"])
+}
+<table border="1">
+    <tr>
+        <th>ClothType</th>
+        <th>ClothId</th>
+        <th>Material</th>
+        <th>Colour</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    @foreach (Tailoring.entity.Cloth cloth in Model)
+    {
+        {
+            Html.RenderPartial("_PartialView", cloth);
+        }
+    }
+
+

@@ -1,0 +1,125 @@
+﻿@model Tailoring.entity.User
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<h2 style="text-align:center;">SignUp</h2>
+
+@using (Html.BeginForm("SignUp", "Account", FormMethod.Post))
+{
+<table align="center" ;>
+    <tr>
+        <td>
+
+            @Html.LabelFor(model => model.Name)
+        </td>
+
+        <td>
+            @Html.TextBoxFor(model => model.Name, new { @maxlength = "20" })
+        </td>
+        <td style="color:red">
+            @Html.ValidationMessageFor(model => model.Name)
+        </td>
+        @*<td>
+                @Html.TextBox("UserName")
+                @Html.ValidationMessage("UserName")
+            </td>*@
+    </tr>
+    <tr>
+        <td> @Html.LabelFor(model => model.MailId)</td>
+
+        <td>
+            @Html.TextBoxFor(model => model.MailId)
+        </td>
+        <td style="color:red">
+            @Html.ValidationMessageFor(model => model.MailId)
+        </td>
+
+    </tr>
+    <tr>
+    <tr>
+        <td> @Html.LabelFor(model => model.Password)</td>
+
+        <td>
+            @Html.PasswordFor(model => model.Password , new { @maxlength = "12"})
+        </td>
+        <td style="color:red">
+            @Html.ValidationMessageFor(model => model.Password)
+        </td>
+        @*<td>@Html.LabelFor(Model => Model.Password)</td>
+            <td>
+                @Html.TextBox("Password")
+                @Html.ValidationMessage("Password")
+            </td>*@
+    </tr>
+    <tr>
+        <td> @Html.LabelFor(model => model.Gender)</td>
+        <td>
+            @Html.RadioButtonFor(m => m.Gender, "Male")Male
+            @Html.RadioButtonFor(m => m.Gender, "Female")Female
+            @Html.RadioButtonFor(m => m.Gender, "Other")Others
+        </td>
+        <td style="color:red">
+            @Html.ValidationMessageFor(model => model.Gender)
+        </td>
+    </tr>
+    <tr>
+        <td> @Html.LabelFor(model => model.Age)</td>
+
+        <td>
+            @Html.TextBoxFor(model => model.Age)
+        </td>
+        <td style="color:red">
+            @Html.ValidationMessageFor(model => model.Age)
+        </td>
+    </tr>
+    <tr>
+        <td> @Html.LabelFor(model => model.MobileNo)</td>
+
+        <td>
+            @Html.TextBoxFor(model => model.MobileNo, new { @maxlength = "10" })
+        </td>
+        <td style="color:red">
+            @Html.ValidationMessageFor(model => model.MobileNo)
+        </td>
+
+    </tr>
+    <tr>
+        <td> @Html.LabelFor(model => model.Address)</td>
+
+        <td>
+            @Html.TextBoxFor(model => model.Address, new { @maxlength = "120" })
+        </td>
+        <td style="color:red">
+            @Html.ValidationMessageFor(model => model.Address)
+        </td>
+
+    </tr>
+    <tr>
+        <td> @Html.LabelFor(model => model.City)</td>
+        <td>
+            @Html.DropDownList("City", new List<SelectListItem>
+       {
+             new SelectListItem{Text="Salem",Value="1"},
+             new SelectListItem{Text="Coimbatore",Value="2"},
+             new SelectListItem{Text="Dindugal",Value="3"},
+             new SelectListItem{Text="Trichy",Value="4"},
+             new SelectListItem{Text="Banglore",Value="5"},
+
+      }, "Select city")
+        </td>
+        <td style="color:red">
+            @Html.ValidationMessageFor(model => model.City)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="SignUp" />
+        </td>
+        <td>
+            <a href="~/Account/Login">Login</a>
+        </td>
+    </tr>
+</table>
+}
+

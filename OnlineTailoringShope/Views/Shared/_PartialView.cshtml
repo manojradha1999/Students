@@ -1,0 +1,15 @@
+﻿@model Tailoring.entity.Cloth
+
+    
+        <tr>
+            <td>@Model.clothType</td>
+            <td>@Model.clothId</td>
+            <td>@Model.Material</td>
+            <td>@Model.colour</td>
+            <td>@Model.price</td>
+
+            <td>
+                @Html.ActionLink("Edit /", "Edit", new { id = Model.clothId })
+                @Html.ActionLink("Delete", "Delete", new { id = Model.clothId })
+            </td>
+        </tr>

@@ -1,0 +1,14 @@
+﻿.RightCorner {
+    display:block unset;
+    text-align : end;
+    padding-left:100% ;
+}
+.TextBox
+{
+    border-color :cyan
+}
+.Gap
+{
+padding-left:10px;
+}
+

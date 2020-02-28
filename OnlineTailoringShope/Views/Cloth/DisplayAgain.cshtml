@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "DisplayAgain";
+}
+
+<h2>DisplayAgain</h2>
+<table border="1">
+    <tr>
+        <th>ClothType</th>
+        <th>ClothId</th>
+        <th>Material</th>
+        <th>Colour</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    @foreach (Tailoring.entity.Cloth item in Model)
+    {
+        @Html.Partial("_PartialView", item)
+    }

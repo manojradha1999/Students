@@ -1,0 +1,63 @@
+﻿@model Tailoring.entity.Cloth
+@{
+    ViewBag.Title = "Edit";
+}
+
+<style>
+    table, tr, td {
+        background-color: pink;
+        border: double;
+        width: 50%;
+    }
+</style>
+<h3>Edit the mobile spec:</h3>
+
+@using (Html.BeginForm("Update", "Cloth", FormMethod.Post))
+{
+    @Html.HiddenFor(Model => Model.clothId)
+<table>
+    <tr>
+        <td>
+            @Html.DisplayFor(Model => Model.clothType, "ClothType")
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.clothType)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(Model => Model.Material, "Material")
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.Material)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(Model => Model.colour, "Colour")
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.colour)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(Model => Model.price, "Price")
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.price)
+        </td>
+    </tr>
+   
+    <tr>
+        <td>
+            <input type="submit" value="Update" />
+        </td>
+        <td>
+            <a href="~/Controllers/ClothController.cs">Back</a>
+        </td>
+    </tr>
+</table>
+}
+
+

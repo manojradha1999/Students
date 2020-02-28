@@ -1,0 +1,41 @@
+﻿@model Tailoring.entity.User
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2 style="text-align:center">Login</h2>
+@using (Html.BeginForm("Login", "Account", FormMethod.Get))
+{
+<body style="background-image : url('/Content/photo-1527380992061-b126c88cbb41.jfif'); background-repeat:no-repeat ;background-size:cover " >
+
+
+
+    <table border="1" align="center" >
+        <tr>
+            <td style="color:aliceblue ; background-color:gray" > @Html.LabelFor(model => model.MailId)</td>
+            <td>
+                @Html.TextBoxFor(model => model.MailId, new { @maxlength = "10" })
+                @Html.ValidationMessageFor(model => model.MailId)
+
+            </td>
+
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model => model.Password)</td>
+
+            <td>
+                @Html.PasswordFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Login" />
+            </td>
+        </tr>
+    </table>
+</body>
+}
+

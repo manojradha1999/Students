@@ -1,0 +1,60 @@
+﻿@model Tailoring.entity.Cloth
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Create", "Cloth", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.clothType, "Cloth type")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.clothType )
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.clothId, "Id")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.clothId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Material, "Material")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Material)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.colour, "Colour")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.colour)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.price, "Price")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.price)
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <input type="submit" value="Submit" />
+            </td>
+            <td>
+                <a href="~/Controllers/ClothController.cs">Back</a>
+            </td>
+        </tr>
+    </table>
+}
+
